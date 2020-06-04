@@ -1,0 +1,556 @@
+* { margin:0; padding:0;}
+
+/* Initialize our game board */
+.container{ width:100%; height: 100%; background-color: lightblue;position:absolute; top:0px; left:0px; text-align:center;}
+#welcome{width:1200px;height:700px;background-color: peachpuff;position:fixed; top:100px; left:300px; text-align:center;z-index:1100;}
+#gameName{width:600px;height:200px;position:fixed; top:250px; left:600px; text-align:center;z-index:1110;color:indigo; font:20pt cambria,serif;}
+#instructions{width:600px;height:200px;position:fixed; top:350px; left:700px; text-align:left;z-index:1110;}
+#howtostart{position:fixed; top:550px; left:600px; text-align:center;background-color: limegreen;z-index:1110;}
+.board{margin:0;width:1200px; height:700px;background-color: white; display:inline-block;position:fixed;top:100px;left:300px;cursor: auto;
+  cursor: url(../images/black-plane.png) 4 12, auto;}
+#credit{
+		margin-top:200px;
+}
+#start{position:fixed;width:50px;height:50px;top:370px;left:250px;background-color:white;z-index:1200;}
+#end{position:fixed;width:50px;height:50px;top:470px;left:300px;background-color:white;z-index:110;}
+
+
+/* BOUNDARIES */
+#top{position:fixed;width:1300px;height:50px;top:50px;left:250px;background-color:indigo;}
+#right{position:fixed;width:50px;height:700px;top:100px;left:1500px;background-color:indigo;}
+#bottom{position:fixed;width:1300px;height:50px;top:800px;left:250px;background-color:indigo;}
+#left{position:fixed;width:50px;height:700px;top:100px;left:250px;background-color:indigo;}
+#wall{position:fixed;width:200px;height:50px;top:420px;left:300px;background-color:indigo;z-index:-100;}
+.inner{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); width:800px; height:300px;  background-color:indigo;}
+
+/* INSTRUCTION SCREEN */
+#instruction_check {display:none;}
+#instruction_check:checked ~ #welcome{ 
+	display:none;
+}
+
+
+/* windmill css code*/
+#windmill1{
+	width:200px;
+	height:200px;	
+	top:50px;
+	left:80px;
+	position:absolute;
+	animation:windmill 1s linear infinite;
+}
+
+ #windmill1 div.blade1, div.blade2,div.blade3,div.blade4 {
+		width: 100px;
+		height: 50px;
+		border: 1px solid blue;
+		border-radius: 50px 50px 0 0;
+		position: absolute;
+}
+
+#windmill1 div.blade1 {
+		top: 50px;
+		background-color:red;        
+		}
+
+#windmill1 div.blade2 {
+		top: 25px;
+		left: 75px;
+		background-color:yellow;
+	 transform: rotate(90deg);
+}
+
+#windmill1 div.blade3 {
+		top: 100px;
+		left: 100px;
+		background-color:blue;
+	 transform: rotate(180deg);
+}
+
+#windmill1 div.blade4 {
+		top: 125px;
+		left: 25px;
+		background-color:green;
+		transform: rotate(270deg);
+}
+
+#windmill1 div.axis {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		z-index: -1;
+		background-color:olive;
+}
+ #windmill2{
+	width:200px;
+	height:200px;	
+	top:50px;
+	left:300px;
+	position:absolute;
+	animation:windmill 1s linear infinite;
+	}    
+ #windmill2 div.blade1, div.blade2,div.blade3,div.blade4 {
+		width: 100px;
+		height: 50px;
+		border: 1px solid blue;
+		border-radius: 50px 50px 0 0;
+		position: absolute;
+}
+
+#windmill2 div.blade1 {
+		top: 50px;
+		background-color:red;        
+}
+
+#windmill2 div.blade2 {
+		top: 25px;
+		left: 75px;
+		background-color:yellow;
+	 transform: rotate(90deg);
+}
+
+#windmill2 div.blade3 {
+		top: 100px;
+		left: 100px;
+		background-color:blue;
+	 transform: rotate(180deg);
+}
+
+#windmill2 div.blade4 {
+		top: 125px;
+		left: 25px;
+		background-color:green;
+		transform: rotate(270deg);
+}
+
+#windmill2 div.axis {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		z-index: -1;
+		background-image: radial-gradient(blue, #fff);
+}
+#windmill3{
+	width:200px;
+	height:200px;	
+	top:50px;
+	left:520px;
+	position:absolute;
+	animation:windmill 1s linear infinite;
+	}
+ #windmill3 div.blade1, div.blade2,div.blade3,div.blade4 {
+		width: 100px;
+		height: 50px;
+		border: 1px solid blue;
+		border-radius: 50px 50px 0 0;
+		position: absolute;
+}
+
+#windmill3 div.blade1 {
+	top: 50px;
+	background-color:red;        
+}
+
+#windmill3 div.blade2 {
+	top: 25px;
+	left: 75px;
+	background-color:yellow;
+	transform: rotate(90deg);
+}
+
+#windmill3 div.blade3 {
+	top: 100px;
+	left: 100px;
+	background-color:blue;
+	transform: rotate(180deg);
+}
+
+#windmill3 div.blade4 {
+	top: 125px;
+	left: 25px;
+	background-color:green;
+	transform: rotate(270deg);
+}
+
+#windmill3 div.axis {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	z-index: -1;
+	background-color:olive;
+}
+/* Intruder spawn */
+.intruder_1 {
+  height:25px;
+  width:25px;
+  border-radius: 25%;
+  transform: translate(5px, 5px);
+  background-color:red;
+  animation: intruder1 5s ease-in 1s infinite normal;
+}
+.intruder_2 {
+  height:50px;
+  width:50px;
+  border-radius: 100%;
+  transform: translate(145px, 145px) translateY(-25px);
+  background-color:green;
+  animation: intruder2 6s ease-in 1s infinite normal;
+}
+.intruder_3 {
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  transform: translate(1155px, 655px) translateY(-75px);
+  background-color:blue;
+  animation: intruder3 7s ease-in 1s infinite normal;
+}
+.intruder_4 {
+  height:20px;
+  width:20px;
+  transform: translate(1100px, 100px) translateY(-115px);
+  background-color:orange;
+  animation: intruder4 8s ease-in 2s infinite normal;
+}
+.intruder_5 {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid yellow;
+	transform:translate(160px,160px) translateY(-135px);
+	animation: intruder5 9s ease-in 2s infinite normal;
+}
+.intruder_6 {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom:30px solid hotpink;
+	position: relative;
+	transform:translate(100px,100px) translateY(-155px);
+	animation: intruder6 10s ease-in 3s infinite normal;
+}
+.intruder_6:after {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid hotpink;
+	position: absolute;
+	content: "";
+	top: 10px;
+	left: -15px;
+}
+.intruder_7 {
+	background: olive;
+	width: 35px;
+	height: 35px;
+	position: relative;
+	text-align: center;
+	transform:translate(10px,10px) translateY(-190px);
+	animation: intruder7 11s ease-in 3s infinite normal;
+}
+.intruder_7:before{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background: olive;
+	transform: rotate(30deg);
+}
+.intruder_7:after{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background: olive;
+	transform: rotate(60deg);
+}
+.intruder_8 {
+  height:45px;
+  width:45px;
+  border-radius: 10%;
+  transform: translate(100px, 600px) translateY(-235px);
+  background-color:maroon;
+  animation: intruder8 12s ease-in 4s infinite normal;
+}
+.intruder_9 {
+  height:45px;
+  width:45px;
+  border-radius: 50%;
+  transform: translate(1015px, 155px) translateY(-275px);
+  background-color:black;
+  animation: intruder9 13s ease-in 4s infinite normal;
+}
+.intruder_10 {
+  height: 25px;
+  width: 50px;
+  border-radius: 50%;
+  transform: translate(100px, 350px) translateY(-325px);
+  background-color: gray;
+  animation: intruder10 14s ease-in 4s infinite normal;
+}
+
+.board .oops {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: visible;
+  display: none;
+  background: rgba(253, 52, 24, 1.0);
+  text-align: center;
+  font-weight: bold;
+}
+.board .oops:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  background: rgba(253, 52, 24, 0.34);
+}
+
+.board .oops:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: 50px;
+  width: 300px;
+}
+
+.oops {
+  display:none;
+}
+.board .oops .oops_content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 40px;
+  background: #FB3315;
+  transform: translateY(-50%);
+  z-index:200;
+}
+.board .oops .oops_content h3 {
+  font-size: 4rem;
+  line-height: 1.2em;
+}
+.board .oops img {
+  display: block;
+  margin: 0 auto 10px;
+}
+.board .oops .start_wrap {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  pointer-events: none;
+
+}
+.board .win {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: visible;
+  display: none;
+  background: rgba(0, 255, 0, 1.0);
+  text-align: center;
+  font-weight: bold;
+}
+.board .win:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  background: rgba(0, 255, 0, 1.0);
+}
+
+.board .win:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: 50px;
+  width: 300px;
+}
+
+.win {
+  display:none;
+}
+.board .win .win_content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 40px;
+  background: rgba(0, 255, 0, 1.0);
+  transform: translateY(-50%);
+  z-index:200;
+}
+.board .win .win_content h3 {
+  font-size: 4rem;
+  line-height: 1.2em;
+}
+.board .win img {
+  display: block;
+  margin: 0 auto 10px;
+}
+.board .win .start_wrap {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  pointer-events: none;
+
+}
+.board .inner:hover ~ .oops,
+.board #top:hover ~ .oops,
+.board #right:hover ~ .oops,
+.board #bottom:hover ~ .oops,
+.board #left:hover ~ .oops,
+.board #end:hover ~ .win,
+.board #wall:hover ~ .oops,
+.board .intruder_1:hover ~ .oops,
+.board .intruder_2:hover ~ .oops,
+.board .intruder_3:hover ~ .oops,
+.board .intruder_4:hover ~ .oops,
+.board .intruder_5:hover ~ .oops,
+.board .intruder_6:hover ~ .oops,
+.board .intruder_7:hover ~ .oops,
+.board .intruder_8:hover ~ .oops,
+.board .intruder_9:hover ~ .oops,
+.board .intruder_10:hover ~ .oops,
+.board .win:hover,
+.board .oops:hover {
+  display: block;
+}
+
+/* Keyframes */
+@keyframes windmill{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+@keyframes intruder1 {
+  from {transform: translate(5px, 5px) rotate(270deg);}
+  25% {transform: translate(5px, 670px) rotate(540deg);}
+  50% {transform: translate(1170px, 670px) rotate(1080deg);}
+  75% {transform: translate(1170px, 5px) rotate(1350deg);}
+  to {transform: translate(5px, 5px) rotate(1890deg);}
+}
+@keyframes intruder2 {
+  from {background-color:green; transform: translate(145px, 145px) translateY(-25px);}
+  25% {background-color:pink; transform: translate(1145px, 5px) translateY(-25px);}
+  50% {background-color:yellow;transform: translate(1005px, 505px) translateY(-25px);}
+  75% {background-color:orange;transform: translate(5px, 645px) translateY(-25px);}
+  to {background-color:blue;transform: translate(145px, 145px) translateY(-25px);}
+}
+@keyframes intruder3 {
+  from {transform: translate(1155px, 655px) translateY(-75px);}
+  25% {transform: translate(1005px, 155px) translateY(-75px);}
+  50% {transform: translate(5px, 5px) translateY(-75px);}
+  75% {transform: translate(155px, 505px) translateY(-75px);}
+  to {transform: translate(1155px, 655px) translateY(-75px);}
+}
+@keyframes intruder4 {
+  from {transform: translate(1100px, 100px) translateY(-115px) rotate(540deg);}
+  25% {transform: translate(175px, 175px) translateY(-115px) rotate(1080deg);}
+  50% {transform: translate(100px, 600px) translateY(-115px) rotate(540deg);}
+  75% {transform: translate(1005px, 505px) translateY(-115px) rotate(0deg);}
+  to {transform: translate(1100px, 100px) translateY(-115px) rotate(540deg);}
+}
+@keyframes intruder5 {
+  from {transform: translate(160px, 160px) translateY(-135px) rotate(540deg);}
+  25% {transform: translate(1000px, 160px) translateY(-135px) rotate(1080deg);}
+  50% {transform: translate(1010px, 510px) translateY(-135px) rotate(540deg);}
+  75% {transform: translate(160px, 510px) translateY(-135px) rotate(0deg);}
+  to {transform: translate(160px, 160px) translateY(-135px) rotate(-540deg);}
+}
+@keyframes intruder6 {
+  from {transform: translate(100px, 100px) translateY(-155px) rotate(1890deg);}
+  25% {transform: translate(1100px, 100px) translateY(-155px) rotate(0deg);}
+  50% {transform: translate(1100px, 600px) translateY(-155px) rotate(1890deg);}
+  75% {transform: translate(100px, 600px) translateY(-155px) rotate(0deg);}
+  to {transform: translate(100px, 100px) translateY(-155px) rotate(1890deg);}
+}
+@keyframes intruder7 {
+  from {transform: translate(10px, 10px) translateY(-190px) rotate(1890deg);}
+  2% {transform: translate(150px, 150px) translateY(-190px) rotate(0deg);}
+  5% {transform: translate(310px, 10px) translateY(-190px) rotate(1890deg);}
+  10% {transform: translate(450px, 150px) translateY(-190px) rotate(0deg);}
+  15% {transform: translate(610px, 10px) translateY(-190px) rotate(1890deg);}
+  20% {transform: translate(750px, 150px) translateY(-190px) rotate(0deg);}
+  25% {transform: translate(910px, 10px) translateY(-190px) rotate(1890deg);}
+  30% {transform: translate(1010px, 150px) translateY(-190px) rotate(0deg);}
+  35% {transform: translate(1150px, 10px) translateY(-190px) rotate(1890deg);}
+  40% {transform: translate(1010px, 150px) translateY(-190px) rotate(0deg);}
+  45% {transform: translate(1150px, 310px) translateY(-190px) rotate(1890deg);}
+  50% {transform: translate(1010px, 450px) translateY(-190px) rotate(0deg);}
+  55% {transform: translate(1150px, 650px) translateY(-190px) rotate(1890deg);}
+  60% {transform: translate(1010px, 510px) translateY(-190px) rotate(0deg);}
+  65% {transform: translate(850px, 650px) translateY(-190px) rotate(1890deg);}
+  70% {transform: translate(710px, 510px) translateY(-190px) rotate(0deg);}
+  75% {transform: translate(500px, 650px) translateY(-190px) rotate(1890deg);}
+  78% {transform: translate(360px, 510px) translateY(-190px) rotate(0deg);}
+  80% {transform: translate(210px, 650px) translateY(-190px) rotate(1890deg);}
+  85% {transform: translate(10px, 510px) translateY(-190px) rotate(0deg);}
+  90% {transform: translate(150px, 380px) translateY(-190px) rotate(1890deg);}
+  95% {transform: translate(10px, 230px) translateY(-190px) rotate(0deg);}
+  98% {transform: translate(150px, 120px) translateY(-190px) rotate(1890deg);}
+  to {transform: translate(10px, 10px) translateY(-155px) rotate(0deg);}
+}
+@keyframes intruder8 {
+  from {transform: translate(100px, 600px) translateY(-235px) rotate(270deg);}
+  25% {transform: translate(100px, 100px) translateY(-235px) rotate(540deg);}
+  50% {transform: translate(1100px, 100px) translateY(-235px) rotate(1080deg);}
+  75% {transform: translate(1100px, 600px) translateY(-235px) rotate(1350deg);}
+  to {transform: translate(100px, 600px) translateY(-235px) rotate(1890deg);}
+}
+@keyframes intruder9 {
+  from {background-color:black;transform: translate(1015px, 155px) translateY(-275px) rotate(270deg);}
+  25% {background-color:grey;transform: translate(105px, 105px) translateY(-275px) rotate(540deg);}
+  50% {background-color:white;transform: translate(155px, 505px) translateY(-275px) rotate(1080deg);}
+  75% {background-color:grey; transform: translate(1005px, 505px) translateY(-275px) rotate(1350deg);}
+  to {background-color:black;transform: translate(1015px, 155px) translateY(-275px) rotate(1890deg);}
+}
+@keyframes intruder10 {
+  from {transform: translate(100px, 350px) translateY(-325px) rotate(270deg);}
+  20% {transform: translate(100px, 600px) translateY(-325px) rotate(540deg);}
+  40% {transform: translate(1100px, 505px) translateY(-325px) rotate(1080deg);}
+  60% {transform: translate(1150px, 150px) translateY(-325px) rotate(1350deg);}
+  80% {transform: translate(105px, 150px) translateY(-325px) rotate(1350deg);}
+  to {transform: translate(100px, 350px) translateY(-325px) rotate(1890deg);}
+}
+
+  
